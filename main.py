@@ -16,56 +16,15 @@ hasta (a,b) moviendose solamente hacia la derecha y hacia arriba
  - ingresar a y b
  - calcular el número de caminos mínimos
  - agregar puntos obligatorios por los que el camino debe pasar
- - agregar puntos bloqueados para casos bloqueados
+ - agregar puntos bloqueados para casos pequeños
  Extensión opcional: dibujar la grilla y algunos caminos usando Python     
 """
+from src.problema_1 import exec
+from utils.factorial import *
 from src.permutacion import *
-import time
+from src.combinacion import *
 
-n = 2          # valor inicial n
-r = 2
-m = 1          # aumento por iteración
-k = 10           # cantidad de datos
-prom = 0
-datos = []
-datosR = []
-for i in range(k):
-    sum=0
-    for j in range(10):
-        start = time.perf_counter()
-        permutacion(n+(m*i),r)
-        end = time.perf_counter()
-        sum += (end-start)
-    prom=sum/10
-    datos.append(prom)
+# exec()
+# print(div_factorial(8,6))
+# print(combinacion(8,2))
 
-for i in range(k):
-    sum=0
-    for j in range(10):
-        start = time.perf_counter()
-        r_permutacion(n+(m*i),r)
-        end = time.perf_counter()
-        sum += (end-start)
-    prom=sum/10
-    datosR.append(prom)
-
-for i in range(k):
-    dif = datos[i] - datosR[i]
-    print(f"n = {int(n+(m*i))}: {dif: .12f}")
-
-
-
-# start = time.perf_counter()
-# permutacion(n,r)
-# end = time.perf_counter()
-# tiempo_total1 = end-start
-# print(f"permutación normal: {tiempo_total1: .10f}")
-
-# start = time.perf_counter()
-# r_permutacion(n,r)
-# end = time.perf_counter()
-# tiempo_total2 = end-start
-# print(f"permutación recursiva: {tiempo_total2: .10f}")
-
-# total = tiempo_total1-tiempo_total2
-# print(f"F1 - F2:\n {total: .10f}")
