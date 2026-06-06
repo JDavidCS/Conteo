@@ -16,16 +16,21 @@ Implementación:
     y sacar un promedio. Adicional, poder cambiar los parámetros de la
     función: n aumenta en m, k veces. Es decir, se calcula k tiempos
     distintos comenzando desde n hasta n+(m*k)
-    A lo ultimo se hace la diferencia Iterativo - Recursivo.
+    A lo ultimo se hace la diferencia Iterativo - Recursivo. Para mostrar
+    cual tuvo mejor rendimiento.
 """
 from src.permutacion import *
 import time
 
-def exec():
-    n = 2          # valor inicial n
-    r = 2
-    m = 1          # aumento por iteración
-    k = 10         # cantidad de datos
+def exec(n:int, r:int, m:int, k:int):
+    """
+    Ejecuta y muestre resultados comparativos entre\n
+    programación recursiva e iterativa\n
+    n -> int: cantidad elementos\n
+    r -> int: tamaño del grupo\n
+    m -> int: incremento de los elementos\n
+    k -> int: cantidad de pruebas
+    """
     prom = 0
     datos = []
     datosR = []
@@ -49,6 +54,13 @@ def exec():
         prom=sum/10
         datosR.append(prom)
 
+    print("------------RESULTADOS INDIVIDUALES------------")
+    print(f"{k} números de prueba, r = {r} (constante)")
+    print("valor n\t  Diferencia de ejecusión\t Funcion más rapida\n")
+
     for i in range(k):
-        dif = datos[i] - datosR[i]
-        print(f"n = {int(n+(m*i))}: {dif: .12f}")
+        dif = abs(datos[i] - datosR[i])
+        msg = "Función recursiva" if (datos[i] - datosR[i])<0 else "Función iterativa"
+        print(f"n = {int(n+(m*i))} \t {dif: .12f} \t\t", msg)
+    print("-----------------------------------------------")
+
