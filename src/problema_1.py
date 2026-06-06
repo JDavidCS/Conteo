@@ -30,10 +30,13 @@ def exec(n:int, r:int, m:int, k:int):
     r -> int: tamaño del grupo\n
     m -> int: incremento de los elementos\n
     k -> int: cantidad de pruebas
+    return -1 en caso de error
     """
+    if r<n: return -1
     prom = 0
     datos = []
     datosR = []
+    # promedio permutación normal
     for i in range(k):
         sum=0
         for j in range(10):
@@ -43,7 +46,7 @@ def exec(n:int, r:int, m:int, k:int):
             sum += (end-start)
         prom=sum/10
         datos.append(prom)
-
+    # promedio permutacion recursiva
     for i in range(k):
         sum=0
         for j in range(10):

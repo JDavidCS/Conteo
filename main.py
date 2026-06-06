@@ -27,6 +27,7 @@ from src.combinacion import *
 
 def ejemplo_permutacion():
     exec(2,2,1,10)
+
 def ejemplo_caminos():
     var1 = count_general(8,4)                   # Caminos en general
     goto = count_evitar(8,4,(4,2))              # Caminos que pasan por el medio
@@ -39,6 +40,7 @@ def ejemplo_caminos():
     print(f"Si se va totalmente a la derecha, solo queda {limit2} camino (ir arriba)")
     
 def get_num():
+    # recibir números positivos
     numero = 0
     
     while numero <= 0:

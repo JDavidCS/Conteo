@@ -28,6 +28,7 @@ def count_obligatorio(a:int, b:int, punto: tuple[int,int]):
     casosAnteriores = count_general(punto[0], punto[1])
     casosSiguientes = count_general(a-punto[0], b-punto[1])
     return casosAnteriores*casosSiguientes
+
 def count_evitar(a:int, b:int, punto: tuple[int,int]):
     """
     a -> int: Pasos derecha\n
