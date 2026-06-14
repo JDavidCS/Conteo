@@ -17,7 +17,7 @@ def div_factorial(n:int, k:int):
     """
     n!/k!
     """
-    if n < k or n < 1 or n < 1: return -1 # n tiene que ser mayor a k y ambos positivos 
+    # if n < k or n < 1 or k < 1: return -1 # n tiene que ser mayor a k y ambos positivos 
     if n == k: return 1                   # igual a decir n!/n!}
     return _dec_factorial(n,k)
 def _dec_factorial(n:int, k:int):

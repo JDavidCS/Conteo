@@ -32,7 +32,7 @@ def exec(n:int, r:int, m:int, k:int):
     k -> int: cantidad de pruebas
     return -1 en caso de error
     """
-    if r<n: return -1
+    if n<r: return -1
     prom = 0
     datos = []
     datosR = []
@@ -57,9 +57,9 @@ def exec(n:int, r:int, m:int, k:int):
         prom=sum/10
         datosR.append(prom)
 
-    print("------------RESULTADOS INDIVIDUALES------------")
+    print("-----------------RESULTADOS INDIVIDUALES-----------------")
     print(f"{k} números de prueba, r = {r} (constante)")
-    print("valor n\t  Diferencia de ejecusión\t Funcion más rapida\n")
+    print("valor n\t  Diferencia de ejecución\t Funcion más rapida\n")
 
     for i in range(k):
         dif = abs(datos[i] - datosR[i])
